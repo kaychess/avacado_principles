@@ -79,7 +79,7 @@ jobs:
       - run: flutter test
 
   build:
-    name: Deploy the applications to web, ios and android apps
+    name: Build the applications for web, ios and android apps
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
