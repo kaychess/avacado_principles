@@ -91,11 +91,11 @@ jobs:
           channel: 'stable'
       - run: flutter pub get
 
-      - name: Building Android APK Files
-        run: flutter build apk --release
+      # - name: Building Android APK Files
+      #   run: flutter build apk --release
 
-      - name : Building iOS Files
-        run: flutter build ios --release --no-codesign
+      # - name : Building iOS Files
+      #   run: flutter build ios --release --no-codesign
       
       - name: Building Web Files 
         run: flutter build web --release
@@ -105,6 +105,7 @@ jobs:
         with:
           name: production-files
           path: ./web
+          if-no-files-found: error
 
   deploy:
     name: Deploy - web, ios and android apps
